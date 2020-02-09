@@ -11,6 +11,8 @@ namespace Algorithms
         {
             
             Prime numprime = new Prime();
+            Automate smartOne = new Automate();
+
             /*
             Console.WriteLine("Type Minimum: ");
             var MinN = Console.ReadLine();
@@ -19,7 +21,9 @@ namespace Algorithms
             var MaxN = Console.ReadLine();
             int MaxNum = Int32.Parse(MaxN);
             numprime.CalculatePrime(MinNum,MaxNum);*/
-            numprime.ElementsList();
+
+            //numprime.ElementsList();
+            smartOne.DoStreaming();
  
         }
     }
