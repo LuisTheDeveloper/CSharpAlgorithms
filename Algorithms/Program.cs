@@ -23,8 +23,8 @@ namespace Algorithms
             numprime.CalculatePrime(MinNum,MaxNum);*/
 
             //numprime.ElementsList();
-            smartOne.DoStreaming();
- 
+            //smartOne.DoStreaming();
+            smartOne.SearchString();
         }
     }
 }
