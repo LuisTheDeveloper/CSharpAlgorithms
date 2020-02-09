@@ -12,19 +12,21 @@ namespace Algorithms
             
             Prime numprime = new Prime();
             Automate smartOne = new Automate();
+            webAPIs smartWeb = new webAPIs();
 
-            /*
+            
             Console.WriteLine("Type Minimum: ");
             var MinN = Console.ReadLine();
             int MinNum = Int32.Parse(MinN);
             Console.WriteLine("Type Maximum: ");
             var MaxN = Console.ReadLine();
             int MaxNum = Int32.Parse(MaxN);
-            numprime.CalculatePrime(MinNum,MaxNum);*/
+            numprime.CalculatePrime(MinNum,MaxNum);
 
-            //numprime.ElementsList();
-            //smartOne.DoStreaming();
+            numprime.ElementsList();
+            smartOne.DoStreaming();
             smartOne.SearchString();
+            smartWeb.SearchForMovies("Twins");
         }
     }
 }

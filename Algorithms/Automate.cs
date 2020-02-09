@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Linq;
+using System.Net;
 
 
 namespace Algorithms
@@ -12,7 +13,7 @@ namespace Algorithms
         public void DoStreaming()
         {
             string myPath = @"c:\temp\Lines.txt";
-            int n = 0, i = 0;
+
             using(StreamReader sr = File.OpenText(myPath))
             {
                 List<String> lines2 = new List<string>();
@@ -67,11 +68,6 @@ namespace Algorithms
                 }
             }
             return myList; 
-        }
-
-        public void DoLinkedLists()
-        {
-
         }
     }
 }
