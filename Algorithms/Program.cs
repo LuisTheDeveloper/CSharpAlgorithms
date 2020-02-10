@@ -35,7 +35,9 @@ namespace Algorithms
                     numprime.CalculatePrime(MinNum, MaxNum);
                     break;
                 case 2:
-                    Console.WriteLine("2");
+                    Console.WriteLine("Type decimal number to convert:");
+                    userInput = Int32.Parse(Console.ReadLine());
+                    smartOne.BinaryGap(userInput);
                     break;
                 case 3:
                     Console.WriteLine("3");
@@ -48,7 +50,7 @@ namespace Algorithms
                     break;
                 case 6:
                     Console.Clear();
-                    String userInp = Console.ReadLine();
+                    String userInp = Console.ReadLine();/*
                     while (i < userInp.Length)
                     {
                         //Try to implement the following:
@@ -56,13 +58,13 @@ namespace Algorithms
                         Console.Write("Please enter a bunch of digits separated by a space: ");
                         var allDigits = Console.ReadLine().Split(' ');
                         Double[] digits = allDigits.Select(d => Covert.ToDouble(d)).ToArray();
-                        */
+                        
                     }
                     char[] myArray = new char[userInp.Length];
                     userInp.CopyTo(0, myArray, 0, userInp.Length);
                     List<string> List1 = new List<string>(myArray);
 
-                    smartOne.InsertSort()
+                    smartOne.InsertSort() */
                     break;
                 default:
                     Console.WriteLine("Wrong value type. Any key to exit...");

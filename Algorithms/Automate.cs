@@ -89,5 +89,24 @@ namespace Algorithms
 
             return userList;
         }
+
+        public int BinaryGap(int N)
+        {
+            int[] binArr = new int[32];
+            int i, j;
+
+            for (i = 0; N > 0; i++)
+            {
+                binArr[i] = N % 2;
+                N = N / 2;
+            }
+
+            for (i = i - 1; i >= 0; i--)
+            {
+                Console.Write(binArr[i]);
+            }
+
+            return 0;
+        }
     }
 }
