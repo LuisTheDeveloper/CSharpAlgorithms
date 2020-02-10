@@ -69,5 +69,25 @@ namespace Algorithms
             }
             return myList; 
         }
+
+        // Insertion Sort with a List
+        public List<int> InsertSort(List<int> userList)
+        {
+            int key, i;
+
+            for(int j=1; j< userList.Count;j++)
+            {
+                key = userList[j];
+                i = j - 1;
+                while (i>0 && userList[i] > key)
+                {
+                    userList[i + 1] = userList[i];
+                    i = i - 1;
+                }
+                userList[i + 1] = key;
+            }
+
+            return userList;
+        }
     }
 }

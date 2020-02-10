@@ -47,7 +47,8 @@ namespace Algorithms
 
             foreach(int num in PrimeList)
             {
-                Console.WriteLine(num);
+                Console.Write(num);
+                Console.Write(" ");
             }
 
         }
