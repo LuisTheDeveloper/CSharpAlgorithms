@@ -90,10 +90,12 @@ namespace Algorithms
             return userList;
         }
 
-        public int BinaryGap(int N)
+        // This function converts a decimal number to binary
+        public int BinaryConv(int N)
         {
             int[] binArr = new int[32];
             int i, j;
+            string binaryNum = "";
 
             for (i = 0; N > 0; i++)
             {
@@ -101,12 +103,80 @@ namespace Algorithms
                 N = N / 2;
             }
 
+            Console.WriteLine("Binary is: ");
             for (i = i - 1; i >= 0; i--)
             {
                 Console.Write(binArr[i]);
+                binaryNum += binArr[i].ToString();
             }
+            Console.WriteLine("");
+            Console.WriteLine("The binary to String is:");
+            Console.WriteLine(binaryNum);
 
-            return 0;
+            return this.BinaryGap(ulong.Parse(binaryNum));
+
+        }
+
+        /* This function checks the largest binary gap of a binary number
+         Binary gap is the number of zeros surrounded by 1
+         e.g. 100 is 01100100, the binary gap is 2 zeros.
+         */
+        private int BinaryGap(ulong N)
+        {
+            string binNum = N.ToString();
+            int i, tot = 0;
+            int j = 0;
+
+            bool foundStart1 = false;
+            bool foundEnd1 = false;
+            bool found0 = false;
+
+            for(i=0; i < binNum.Length;i++)
+            {
+                if (binNum.Substring(i, 1) == "1")
+                {
+                    if (foundStart1 == true)
+                    {
+                        if (found0 == true)
+                        {
+                            foundStart1 = false;
+                            found0 = false;
+                            foundEnd1 = true;
+                            if (j > tot)
+                                tot = j;
+                            j = 0;
+                        }
+                    }
+                    else
+                    {
+                        if (foundEnd1 == true)
+                        {
+                            foundEnd1 = false;
+                            foundStart1 = true;
+                        }
+                        else
+                            foundStart1 = true;
+                    }
+                        
+                }
+                else
+                {
+                    if (foundStart1 == true)
+                    {
+                        j += 1;
+                        found0 = true;
+                    }
+                    else if(foundEnd1 == true)
+                    {
+                        foundEnd1 = false;
+                        foundStart1 = true;
+                        j += 1;
+                        found0 = true;
+                    }
+                }
+                        
+            }
+            return tot;
         }
     }
 }

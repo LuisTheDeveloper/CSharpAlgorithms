@@ -18,7 +18,6 @@ namespace Algorithms
             Console.WriteLine("1-PrimeNumbers | 2-List | 3-FileStream | 4-StringSearch | 5-WebAPI | 6-InsertSort");
             Console.WriteLine("Please, choose the algorithm option:");
             int userInput = Int32.Parse(Console.ReadLine());
-            int i;
 
             switch (userInput)
             {
@@ -37,7 +36,8 @@ namespace Algorithms
                 case 2:
                     Console.WriteLine("Type decimal number to convert:");
                     userInput = Int32.Parse(Console.ReadLine());
-                    smartOne.BinaryGap(userInput);
+                    Console.Clear();
+                    Console.WriteLine($"The binary gap is {smartOne.BinaryConv(userInput)}");
                     break;
                 case 3:
                     Console.WriteLine("3");
