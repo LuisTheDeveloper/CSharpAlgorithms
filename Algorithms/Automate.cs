@@ -94,7 +94,7 @@ namespace Algorithms
         public int BinaryConv(int N)
         {
             int[] binArr = new int[32];
-            int i, j;
+            int i;
             string binaryNum = "";
 
             for (i = 0; N > 0; i++)
@@ -178,7 +178,32 @@ namespace Algorithms
             }
             return tot;
         }
+        
+        public int[] CyclicRotation(int[] userArr, int userK)
+        {
+            int i = 0;
+            int k = userArr.Length - 1;
 
+            int[] mirrorArr = new int[userArr.Length];
+
+            while (i < userK)
+            {
+                for(int j = 0; j <= k; j++)
+                {
+
+                    if(j==0)
+                        mirrorArr[j] = userArr[k];
+                    else
+                    {
+                        mirrorArr[j] = userArr[j-1];
+                    }
+                    
+                }
+                i += 1;
+                Array.Copy(mirrorArr, 0, userArr, 0, k + 1);
+            }
+            return mirrorArr;
+        }
 
     }
 }

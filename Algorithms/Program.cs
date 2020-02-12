@@ -15,7 +15,7 @@ namespace Algorithms
             webAPIs smartWeb = new webAPIs();
 
             Console.WriteLine("Algorithm Options Available");
-            Console.WriteLine("1-PrimeNumbers | 2-List | 3-FileStream | 4-StringSearch | 5-WebAPI | 6-InsertSort");
+            Console.WriteLine("1-PrimeNumbers | 2-Binary Gap | 3-FileStream | 4-StringSearch | 5-WebAPI | 6-InsertSort | 7- Arrays");
             Console.WriteLine("Please, choose the algorithm option:");
             int userInput = Int32.Parse(Console.ReadLine());
 
@@ -65,6 +65,29 @@ namespace Algorithms
                     List<string> List1 = new List<string>(myArray);
 
                     smartOne.InsertSort() */
+                    break;
+                case 7:
+                    Console.Clear();
+                    Console.WriteLine("Type in the numbers separated by a comma:");
+                    string strUser = Console.ReadLine();
+                    string[] tokens = strUser.Split(",");
+                    int[] userArray = new int[tokens.Length];
+                    int[] userArray2 = new int[tokens.Length];
+                    int i = 0;
+                    foreach (string s in tokens)
+                    {
+                        userArray[i] = Int32.Parse(s);
+                        i += 1;
+                    }
+                    Console.WriteLine("Type in the cycle times:");
+                    int intUser = Int32.Parse(Console.ReadLine());
+                    Array.Copy(smartOne.CyclicRotation(userArray, intUser), 0, userArray2, 0, userArray.Length);
+
+                    foreach(int number in userArray2)
+                    {
+                        Console.WriteLine(number);
+                    }
+                    
                     break;
                 default:
                     Console.WriteLine("Wrong value type. Any key to exit...");
