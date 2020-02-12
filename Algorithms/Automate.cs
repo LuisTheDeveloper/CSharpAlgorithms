@@ -82,7 +82,7 @@ namespace Algorithms
                 while (i>0 && userList[i] > key)
                 {
                     userList[i + 1] = userList[i];
-                    i = i - 1;
+                    i -= 1;
                 }
                 userList[i + 1] = key;
             }
@@ -100,11 +100,11 @@ namespace Algorithms
             for (i = 0; N > 0; i++)
             {
                 binArr[i] = N % 2;
-                N = N / 2;
+                N /= 2;
             }
 
             Console.WriteLine("Binary is: ");
-            for (i = i - 1; i >= 0; i--)
+            for (i -= 1; i >= 0; i--)
             {
                 Console.Write(binArr[i]);
                 binaryNum += binArr[i].ToString();
