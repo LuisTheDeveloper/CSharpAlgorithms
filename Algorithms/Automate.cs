@@ -178,7 +178,11 @@ namespace Algorithms
             }
             return tot;
         }
-        
+
+        // The goal with this CyclicRotation is just to rotate the elements of an array x times.
+        // e.g.: for an array [10,50,75,99]:
+        // rotating once makes it like: [50,75,99,10]
+        // rotating 2 times makes it like: [75,99,10,50] and so on...
         public int[] CyclicRotation(int[] userArr, int userK)
         {
             int i = 0;
