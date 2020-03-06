@@ -209,5 +209,32 @@ namespace Algorithms
             return mirrorArr;
         }
 
+        public static int[] ArrayDiff(int[] a, int[] b)
+        {
+            int[] c = new int[a.Length];
+            bool wFound = false;
+            int k = 0;
+
+            for(int i = 0; i < a.Length - 1; i++)
+            {
+               for(int j = 0; j < b.Length - 1; j++)
+                {
+                    if(a[i] == b[j])
+                    {
+                        wFound = true;
+                        break;                        
+                    }
+                }
+                if (wFound == false)
+                {
+                    c[k] = a[i];
+                    k ++;
+                }
+                wFound = false;
+            }
+
+            return c;
+        }
+
     }
 }

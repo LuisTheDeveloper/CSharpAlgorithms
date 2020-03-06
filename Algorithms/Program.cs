@@ -13,9 +13,10 @@ namespace Algorithms
             Prime numprime = new Prime();
             Automate smartOne = new Automate();
             webAPIs smartWeb = new webAPIs();
-
+            
             Console.WriteLine("Algorithm Options Available");
             Console.WriteLine("1-PrimeNumbers | 2-Binary Gap | 3-FileStream | 4-StringSearch | 5-WebAPI | 6-InsertSort | 7- Arrays");
+            Console.WriteLine("8-ArrayDiff ");
             Console.WriteLine("Please, choose the algorithm option:");
             int userInput = Int32.Parse(Console.ReadLine());
 
@@ -69,6 +70,7 @@ namespace Algorithms
                 case 7:
                     Console.Clear();
                     Console.WriteLine("Type in the numbers separated by a comma:");
+                    
                     string strUser = Console.ReadLine();
                     string[] tokens = strUser.Split(",");
                     int[] userArray = new int[tokens.Length];
@@ -88,6 +90,34 @@ namespace Algorithms
                         Console.WriteLine(number);
                     }
                     
+                    break;
+                case 8:
+                    Console.Clear();
+                    Console.WriteLine("Type in the numbers for the first array separated by a comma:");
+                    strUser = Console.ReadLine();
+                    string[] tokens1 = strUser.Split(",");
+                    int[] userArray1 = new int[tokens1.Length];
+                    i = 0;
+                    foreach (string s in tokens1)
+                    {
+                        userArray1[i] = Int32.Parse(s);
+                        i += 1;
+                    }
+                    Console.WriteLine("Type in the numbers for the second array separated by a comma:");
+                    strUser = Console.ReadLine();
+                    string[] tokens2 = strUser.Split(",");
+                    int[] userArray3 = new int[tokens2.Length];
+                    i = 0;
+                    foreach (string s in tokens2)
+                    {
+                        userArray3[i] = Int32.Parse(s);
+                        i += 1;
+                    }
+                    int[] returnArray = Automate.ArrayDiff(userArray1, userArray3);
+                    foreach (int number in returnArray)
+                    {
+                        Console.WriteLine(number);
+                    }
                     break;
                 default:
                     Console.WriteLine("Wrong value type. Any key to exit...");
